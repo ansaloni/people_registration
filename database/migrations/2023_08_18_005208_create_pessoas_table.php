@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('pessoas', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 60);
+            $table->integer('idade');
+            $table->string('email', 60);
+            $table->char('sexo')->nullable();
+            $table->string('senha', 128)->nullable();
             $table->timestamps();
         });
     }
