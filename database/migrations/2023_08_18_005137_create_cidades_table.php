@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -13,8 +14,15 @@ return new class extends Migration
     {
         Schema::create('cidades', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 60);
             $table->timestamps();
         });
+
+        DB::table('cidades')->insert([
+            ['nome' => 'Belo Horizonte'],
+            ['nome' => 'Betim'],
+            ['nome' => 'Contagem'],
+        ]);
     }
 
     /**
