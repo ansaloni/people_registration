@@ -15,7 +15,7 @@ Certifique-se de que você possui o seguinte instalado no seu ambiente:
 
 1. Clone o repositório para o seu ambiente local:
 
-git clone https://github.com/seu-usuario/sistema-crud-laravel.git
+git clone https://github.com/ansaloni/people_registration
 
 2. Navegue para o diretório do projeto:
 
