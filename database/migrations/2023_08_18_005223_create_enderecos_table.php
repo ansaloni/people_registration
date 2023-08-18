@@ -13,7 +13,18 @@ return new class extends Migration
     {
         Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tipo_logradouro_id');
+            $table->unsignedBigInteger('cidade_id');
+            $table->unsignedBigInteger('pessoa_id');
+            $table->string('logradouro', 200);
+            $table->integer('numero');
+            $table->integer('cep')->nullable();
+            $table->string('bairro', 60)->nullable();
             $table->timestamps();
+
+            $table->foreign('tipo_logradouro_id')->references('id')->on('tipo_logradouros')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+            $table->foreign('cidade_id')->references('id')->on('cidades')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+            $table->foreign('pessoa_id')->references('id')->on('pessoas')->onUpdate('CASCADE')->onDelete('CASCADE');
         });
     }
 
