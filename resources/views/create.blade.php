@@ -7,26 +7,29 @@
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
 </head>
 <body>
+    <div class="header">
+        <h1 class="title">Cadastro de Pessoas</h1>
+        <hr>
+    </div>
     <div class="form-container">
-        <h2 class="form-title">Adicionar Registro</h2>
         <form class="data-form" action="{{ url('/') }}" method="POST">
             @csrf
             <fieldset class="personal-data">
                 <legend>Dados Pessoais</legend>
                 <div class="form-group">
-                    <label for="nome">Nome:</label>
+                    <label for="nome">Nome:</label><br>
                     <input class="input-field" type="text" name="nome" required>
                 </div>
                 <div class="form-group">
-                    <label for="idade">Idade:</label>
+                    <label for="idade">Idade:</label><br>
                     <input class="input-field" type="number" name="idade" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">E-mail:</label>
+                    <label for="email">E-mail:</label><br>
                     <input class="input-field" type="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label>Sexo:</label>
+                    <label>Sexo:</label><br>
                     <input type="radio" id="generoM" name="sexo" value="Masculino">
                     <label for="generoM">Masculino</label>
 
@@ -34,12 +37,12 @@
                     <label for="generoF">Feminino</label>
                 </div>
                 <div class="form-group">
-                    <label for="senha">Senha:</label>
+                    <label for="senha">Senha:</label><br>
                     <input class="input-field" type="password" id="senha" name="senha">
                 </div>
                 
                 <div class="form-group">
-                    <label for="confirmaSenha">Confirme a Senha:</label>
+                    <label for="confirmaSenha">Confirme a Senha:</label><br>
                     <input class="input-field" type="password" id="confirmaSenha" name="confirmaSenha" required>
                 </div>
             </fieldset>
@@ -48,11 +51,11 @@
                 <legend>Endereço</legend>
                 
                 <div class="form-group">
-                    <label for="cep">CEP:</label>
+                    <label for="cep">CEP:</label><br>
                     <input class="input-field" type="text" id="cep" name="cep">
-                </div>
+                </div><br>
                 <div class="form-group">
-                    <label for="tipoLogradouro">Tipo de Logradouro:</label>
+                    <label for="tipoLogradouro">Tipo de Logradouro:</label><br>
                     <select class="input-field" id="tipoLogradouro" name="tipoLogradouro">
                         @foreach($tiposLogradouro as $tipo)
                             <option value="{{ $tipo->id }}">{{ $tipo->tipo }}</option>
@@ -60,19 +63,19 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="logradouro">Logradouro:</label>
+                    <label for="logradouro">Logradouro:</label><br>
                     <input class="input-field" type="text" id="logradouro" name="logradouro">
                 </div>
                 <div class="form-group">
-                    <label for="numero">Número:</label>
+                    <label for="numero">Número:</label><br>
                     <input class="input-field" type="text" id="numero" name="numero">
                 </div>
                 <div class="form-group">
-                    <label for="bairro">Bairro:</label>
+                    <label for="bairro">Bairro:</label><br>
                     <input class="input-field" type="text" id="bairro" name="bairro">
                 </div>
                 <div class="form-group">
-                    <label for="cidade">Cidade:</label>
+                    <label for="cidade">Cidade:</label><br>
                     <select class="input-field" id="cidade" name="cidade">
                         @foreach($cidades as $cidade)
                             <option value="{{ $cidade->id }}">{{ $cidade->nome }}</option>

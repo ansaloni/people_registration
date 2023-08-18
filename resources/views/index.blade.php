@@ -8,13 +8,14 @@
 </head>
 <body>
     <div class="header">
-        <h1 class="title">Registro de Pessoas</h1>
-        <a href="{{ url('/create') }}"><button class="add-btn">Adicionar Registro</button></a>
+        <h1 class="title">Cadastro de Pessoas</h1>
+        <hr>
+        <a href="{{ url('/create') }}"><button class="add-btn">Novo</button></a>
     </div>
     <div class="table-container">
         <table class="data-table">
             <thead>
-                <tr>
+                <tr class="table-header">
                     <th>Nome</th>
                     <th>Endereço</th>
                     <th>Idade</th>
@@ -32,7 +33,8 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->sexo }}</td>
                         <td class="actions-cell">
-                            <a href="{{ url("/{$user->id}/edit") }}"><button class="edit-btn">Editar</button></a>
+                            <button class="edit-btn" type="button" onclick="window.location='{{ url("/{$user->id}/edit") }}'">Editar</button>
+                            
                             <form class="delete-form" action="{{ url("/{$user->id}") }}" method="POST" >
                                 @csrf
                                 @method('DELETE')
