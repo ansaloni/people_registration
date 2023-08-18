@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class TipoLogradouro extends Model
 {
-    use HasFactory;
+    protected $table = 'tipo_logradouros';
+
+    protected $fillable = ['tipo'];
+
+    public function enderecos()
+    {
+        return $this->hasMany(Endereco::class, 'tipo_logradouros_id');
+    }
 }
