@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cidade extends Model
 {
-    use HasFactory;
+    protected $fillable = ['nome'];
+
+    public function enderecos()
+    {
+        return $this->hasMany(Endereco::class, 'cidade_id');
+    }
 }
